@@ -10,7 +10,7 @@ tags:
     - FrameWork
 ---
 
-###1.屏蔽首页的Google搜索栏
+### 1.屏蔽首页的Google搜索栏
 ./launcher3/config/BaseFlags.java中，QSB_ON_FIRST_SCREEN参数，设置为false，会在./launcher3/Workspace.java中的bindAndInitFirstWorkspaceScreen中生效
 ```Android
 
@@ -40,7 +40,7 @@ tags:
     }
 ```
 
-###2.关闭抽屉栏，并把图标加载在主界面
+### 2.关闭抽屉栏，并把图标加载在主界面
 1.先在全局配置文件./launcher3/config/BaseFlags.java添加
 ```Android
     //隐藏抽屉栏，并且将所有图标放在主界面
@@ -199,7 +199,7 @@ verifyApplication
     }
 ```
 
-###3.长按图标后，将Dropbar栏的取消改为卸载，系统应用不允许操作
+### 3.长按图标后，将Dropbar栏的取消改为卸载，系统应用不允许操作
 主要是将非微件的Icon长按后的删除操作去掉，通过drop_target_bar.xml可知，可以找到DeleteDropTarget.java就是处理删除操作的类；
 其中SupportDrop()方法就是处理长按icon后，是否显示对应操作选项；可以通过获取ItemInfo的runtimeStatusFlags可以知道，它是否是系统应用还是不是系统应用，若2项都不是，就可能是微件，可以不用处理。
 ```Android
@@ -232,7 +232,7 @@ verifyApplication
 ```
 
 
-###4.移除AppIcon白边
+### 4.移除AppIcon白边
 当TargetSdkVersion >= 26(O)时，Launcher3会对AppIcon加一层白色背景，因此只需要把这个判断移除了就能吧AppIcon白边去掉；
 位置在./launcher3/icons/BaseIconFactory.java中
 ```Android
